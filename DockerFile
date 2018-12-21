@@ -1,0 +1,15 @@
+FROM microsoft/dotnet
+
+LABEL maintainer="dheena@gmail.com"
+
+
+WORKDIR /api
+
+COPY . .
+
+RUN dotnet build
+RUN dotnet publish -o /publish
+
+WORKDIR /publish
+
+ENTRYPOINT [ "dotnet", "/publish/api.dll" ]

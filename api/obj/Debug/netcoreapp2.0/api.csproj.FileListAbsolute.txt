@@ -1,0 +1,12 @@
+C:\publish\api.deps.json
+C:\publish\api.runtimeconfig.json
+C:\publish\api.runtimeconfig.dev.json
+C:\publish\api.dll
+C:\publish\api.pdb
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\api.csprojAssemblyReference.cache
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\api.csproj.CoreCompileInputs.cache
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\api.AssemblyInfoInputs.cache
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\api.AssemblyInfo.cs
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\api.dll
+C:\Users\310158964\Documents\GitHub\Docker-deep-dive\1\api\obj\Debug\netcoreapp2.0\api.pdb
