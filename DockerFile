@@ -1,6 +1,6 @@
 FROM microsoft/dotnet
 
-LABEL maintainer="dheena@gmail.com"
+LABEL maintainer="dheenadhayalan@gmail.com"
 
 
 WORKDIR /api
