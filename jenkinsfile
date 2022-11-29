@@ -1,0 +1,20 @@
+#!/usr/bin/env groovy
+
+pipeline {
+    agent none
+    stages {
+        stage('Build') {
+            agent { label 'buildserver' }
+            options {
+               timeout(time: 1, unit: 'HOURS')
+               timestamps()
+            }
+            steps {
+                cleanWs()
+                script {
+                    echo "Hello world in build stage"
+                }
+            }
+        }        
+    }
+}
