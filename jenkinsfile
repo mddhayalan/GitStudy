@@ -13,7 +13,8 @@ pipeline {
                 cleanWs()
                 checkout scm
                 script {
-                    echo "Hello world in build stage"
+                    dotnet build generator.sln
+                    dotnet build TestApp/TestApp.sln
                 }
             }
         }        
