@@ -20,7 +20,7 @@ pipeline {
 }
 
 def CallDotNetBuild(String solutionPath) {
-    RunBatch("dotnet build ${WORKSPACE}\\${solutionPath}")
+    RunBatch("dotnet build ${WORKSPACE}//${solutionPath}")
 } 
 
 def RunBatch(String command) {
