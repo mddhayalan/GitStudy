@@ -10,8 +10,8 @@ pipeline {
                timestamps()
             }
             steps {
-                cleanWs()
-                checkout scm
+                cleanWs() //Cleans the jenkins workspace
+                //checkout scm // checkout the required github repository
                 CallDotNetBuild("generator.sln")
                 CallDotNetBuild("TestApp//TestApp.sln")
             }

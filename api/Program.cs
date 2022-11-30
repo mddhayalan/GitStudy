@@ -21,5 +21,9 @@ namespace api
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
                 .Build();
+        public static string TestMethod()
+        {
+            return "hello World";
+        }
     }
 }
