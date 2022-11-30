@@ -12,11 +12,17 @@ pipeline {
             steps {
                 cleanWs()
                 checkout scm
-                script {
-                    dotnet build generator.sln
-                    dotnet build TestApp/TestApp.sln
-                }
+                CallDotNetBuild("generator.sln")
+                CallDotNetBuild("TestApp//TestApp.sln")
             }
         }        
     }
+}
+
+def CallDotNetBuild(String solutionPath) {
+    RunBatch("dotnet build ${WORKSPACE}\\${solutionPath}")
+} 
+
+def RunBatch(String command) {
+    bat returnStatus: false, script:"${command}"
 }
