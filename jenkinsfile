@@ -25,9 +25,21 @@ pipeline {
             }
             steps {
                 unstash("build-ws")
-                CallDotNetTest("generator.sln")
+                //CallDotNetTest("generator.sln")
             }
-        }        
+        }  
+        stage('Deployment') {
+            agent { label 'buildserver' }
+            options {
+               timeout(time: 1, unit: 'HOURS')
+               timestamps()
+            }
+            steps {
+                //binary -> deployed to asp.net docker image
+                //run the image -> we can see the web page
+                echo "web site deployed"
+            }
+        }       
     }
 }
 
