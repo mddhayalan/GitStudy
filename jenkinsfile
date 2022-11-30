@@ -25,7 +25,7 @@ pipeline {
             }
             steps {
                 unstash("build-ws")
-                CallDotNetTest("apiTests//apiTests.csproj")
+                CallDotNetTest("generator.sln")
             }
         }        
     }
