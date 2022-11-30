@@ -11,7 +11,7 @@ pipeline {
             }
             steps {
                 cleanWs() //Cleans the jenkins workspace
-                //checkout scm // checkout the required github repository
+                checkout scm // checkout the required github repository
                 CallDotNetBuild("generator.sln")
                 CallDotNetBuild("TestApp//TestApp.sln")
             }
