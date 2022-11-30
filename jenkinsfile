@@ -14,6 +14,18 @@ pipeline {
                 checkout scm // checkout the required github repository
                 CallDotNetBuild("generator.sln")
                 CallDotNetBuild("TestApp//TestApp.sln")
+                stash("build-ws")
+            }
+        }
+        stage('Test') {
+            agent { label 'buildserver' }
+            options {
+               timeout(time: 1, unit: 'HOURS')
+               timestamps()
+            }
+            steps {
+                unstash("build-ws")
+                CallDotNetTest("apiTests//apiTests.csproj")
             }
         }        
     }
@@ -22,6 +34,10 @@ pipeline {
 def CallDotNetBuild(String solutionPath) {
     RunBatch("dotnet build ${WORKSPACE}//${solutionPath}")
 } 
+
+def CallDotNetTest(String solutionPath) {
+    RunBatch("dotnet test ${WORKSPACE}//${solutionPath}")
+}
 
 def RunBatch(String command) {
     sh returnStatus: false, script:"${command}"
