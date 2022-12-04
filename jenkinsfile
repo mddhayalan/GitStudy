@@ -12,7 +12,7 @@ pipeline {
             steps {
                 cleanWs() //Cleans the jenkins workspace
                 checkout scm // checkout the required github repository
-                CallDotNetBuild("generator.sln")
+                CallDotNetBuild("WebApplication1/WebApplication1.sln")
                 CallDotNetBuild("TestApp//TestApp.sln")
                 stash("build-ws")
             }
@@ -25,7 +25,7 @@ pipeline {
             }
             steps {
                 unstash("build-ws")
-                //CallDotNetTest("generator.sln")
+                CallDotNetTest("WebApplication1/WebApplication1.sln")
             }
         }  
         stage('Deployment') {
