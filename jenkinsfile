@@ -4,7 +4,7 @@ pipeline {
     agent none
     stages {
         stage('Build') {
-            agent { label 'buildserver' }
+            agent { label 'dotnet' }
             options {
                timeout(time: 1, unit: 'HOURS')
                timestamps()
@@ -18,7 +18,7 @@ pipeline {
             }
         }
         stage('Test') {
-            agent { label 'buildserver' }
+            agent { label 'dotnet' }
             options {
                timeout(time: 1, unit: 'HOURS')
                timestamps()
@@ -29,7 +29,7 @@ pipeline {
             }
         }  
         stage('Deployment') {
-            agent { label 'buildserver' }
+            agent { label 'agent1' }
             options {
                timeout(time: 1, unit: 'HOURS')
                timestamps()
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 //binary -> deployed to asp.net docker image
                 //run the image -> we can see the web page
-                echo "web site deployed"
+                echo "web site deployed from ${env.BRANCH_NAME}"
             }
         }       
     }
