@@ -13,7 +13,7 @@ pipeline {
                 cleanWs()
                 checkout scm
                 script {
-                    echo "Hello world in build stage"
+                    echo "Hello world in build stage ${env.BRANCH_NAME}"
                 }
             }
         }        
