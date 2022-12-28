@@ -4,7 +4,7 @@ pipeline {
     agent none
     stages {
         stage('Build') {
-            agent { label 'buildserver' }
+            agent { label 'agent1' }
             options {
                timeout(time: 1, unit: 'HOURS')
                timestamps()
